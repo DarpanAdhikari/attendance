@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Attendance & Salary Viewer || Darpan Adhikari</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<link rel="stylesheet" href="assets/index_drp.min.css">
+<link rel="icon" href="https://www.darpanadhikari.com.np/addition/images/logo.ico" type="image/x-icon">
+</head>
+<body>
+<div class="container">
+<h2>Attendance & Salary Viewer</h2>
+
+<div class="navbar">
+  <div class="form-group">
+    <label>Upload Users (.dat): </label>
+    <input type="file" id="userFile" accept=".dat">
+  </div>
+  <div class="form-group">
+    <label>Upload Attendance (.dat): </label>
+    <input type="file" id="attendanceFile" accept=".dat">
+  </div>
+</div>
+
+<div class="navbar">
+  <div class="form-group">
+    <label for="userSelect">Select User: </label>
+    <select id="userSelect"><option value="">-- Select --</option></select>
+  </div>
+  <div class="form-group">
+    <label for="fromDate">From: </label>
+    <input type="date" id="fromDate">
+  </div>
+  <div class="form-group">
+    <label for="toDate">To: </label>
+    <input type="date" id="toDate">
+  </div>
+  <button onclick="filterInOut()">Filter In/Out</button>
+</div>
+
+<div class="weekend-checkbox">
+  <label><input type="checkbox" id="includeWeekend"> Include Weekend in Expected Hours</label>
+</div>
+
+<div class="tabs" id="userTabs"></div>
+<div id="tabContents"></div>
+
+<footer>
+  <span><i>&copy;</i><span id="date"></span>
+  <a href="https://darpanadhikari.com.np" target="_blank">DarpanAdhikari</a> || All right reserved</span>
+</footer>
+<script src="assets/index_drp.min.js"></script>
+</body>
+</html>
